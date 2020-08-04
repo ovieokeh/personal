@@ -22,6 +22,7 @@ export default {
 <style lang="scss">
 #app {
   background-color: $c-accent-dark;
+  padding: 0 $padding-sm;
   height: 100%;
 }
 

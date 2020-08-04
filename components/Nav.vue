@@ -103,10 +103,19 @@ export default {
   },
   methods: {
     toggleMenu(event) {
-      let isToggled = !this.isToggled
+      let isToggled = false
 
       if (event.target.classList.contains('link')) {
-        isToggled = false
+        event.preventDefault()
+
+        const targetID = event.target.href.split('#')[1]
+        const target = document.querySelector(`#${targetID}`)
+
+        if (target) target.scrollIntoView({ behaviour: 'smooth' })
+      }
+
+      if (event.target.classList.contains('menu')) {
+        isToggled = !this.isToggled
       }
 
       this.isToggled = isToggled
@@ -166,8 +175,8 @@ export default {
   top: 0;
   left: 0;
   right: 0;
-  transition: all 250ms cubic-bezier(0.645, 0.045, 0.355, 1);
-  z-index: 999;
+  transition: all 250ms $transition;
+  z-index: 9;
 }
 
 .logo {
@@ -189,21 +198,20 @@ export default {
   right: 0;
   bottom: 0;
   top: 0;
-  transition: width 250ms cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: width 250ms $transition;
 
   &.active::after {
     content: '';
     display: block;
     background-color: rgba(13, 31, 45, 0.4);
     backdrop-filter: blur(2px);
-    -webkit-backdrop-filter: blur(2px);
 
     height: 100%;
     width: 32vw;
     position: fixed;
     left: 0;
     opacity: 0;
-    animation: fade-in 250ms 200ms ease forwards;
+    animation: fade-in 250ms 200ms $transition forwards;
   }
 }
 
@@ -216,6 +224,7 @@ export default {
   &-index {
     display: block;
     color: $c-accent-light;
+    pointer-events: none;
   }
 
   &-button {
@@ -228,10 +237,8 @@ export default {
     margin-top: $space-md;
     font-size: 18px;
     line-height: 1;
-    -webkit-text-decoration: none;
     text-decoration: none;
-    -webkit-transition: all 250ms cubic-bezier(0.645, 0.045, 0.355, 1);
-    transition: all 250ms cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: all 250ms $transition;
 
     &:hover {
       background-color: $c-accent;
@@ -257,7 +264,6 @@ export default {
 
   .link {
     font-size: 14px;
-    -webkit-text-decoration: none;
     text-decoration: none;
     color: $c-main;
     padding: $space-sm;

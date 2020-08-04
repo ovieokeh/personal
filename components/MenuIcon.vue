@@ -32,7 +32,7 @@ export default {
   border: none;
   padding: 0;
   position: relative;
-  z-index: 300;
+  z-index: 1;
   cursor: pointer;
   outline: none;
 }

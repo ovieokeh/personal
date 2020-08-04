@@ -16,6 +16,20 @@ export default {
     Nav,
     SocialIcons,
   },
+  mounted() {
+    if (this.$route.hash) {
+      const id = this.$route.hash.substring(1) // location.hash without the '#'
+
+      setTimeout(() => {
+        const el = document.getElementById(id)
+
+        if (el) {
+          el.scrollIntoView()
+          el.focus()
+        }
+      }, 0)
+    }
+  },
 }
 </script>
 

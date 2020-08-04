@@ -105,15 +105,6 @@ export default {
     toggleMenu(event) {
       let isToggled = false
 
-      if (event.target.classList.contains('link')) {
-        event.preventDefault()
-
-        const targetID = event.target.href.split('#')[1]
-        const target = document.querySelector(`#${targetID}`)
-
-        if (target) target.scrollIntoView({ behaviour: 'smooth' })
-      }
-
       if (event.target.classList.contains('menu')) {
         isToggled = !this.isToggled
       }

@@ -7,7 +7,7 @@
       :roles="roles"
     />
 
-    <About :about-me="aboutMe" :technologies="technologies" />
+    <About :technologies="technologies" />
   </main>
 </template>
 

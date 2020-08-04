@@ -42,10 +42,6 @@
 <script>
 export default {
   props: {
-    aboutMe: {
-      type: String,
-      required: true,
-    },
     technologies: {
       type: Array,
       required: true,

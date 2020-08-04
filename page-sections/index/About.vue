@@ -1,6 +1,6 @@
 <template>
   <section id="about" class="container">
-    <h2 class="header">About me</h2>
+    <SectionHeader text="About me" :index="1" />
 
     <div class="content">
       <div>
@@ -40,7 +40,12 @@
 </template>
 
 <script>
+import SectionHeader from '~/components/SectionHeader'
+
 export default {
+  components: {
+    SectionHeader,
+  },
   props: {
     technologies: {
       type: Array,
@@ -55,40 +60,6 @@ export default {
   margin-top: 200px;
   padding-top: $space-xxl;
   min-height: 100vh;
-}
-
-.header {
-  display: flex;
-  align-items: center;
-  color: $c-main;
-  position: relative;
-  margin-bottom: $space-xxxl;
-  width: 100%;
-  white-space: nowrap;
-  -webkit-box-align: center;
-
-  &::before {
-    align-self: flex-end;
-    counter-increment: section 1;
-    content: '0' counter(section) '.';
-    font-size: 18px;
-    margin-right: 10px;
-    color: $c-navy-light;
-    position: relative;
-    bottom: 2px;
-  }
-
-  &::after {
-    content: '';
-    display: inline-block;
-    width: 100%;
-    max-width: 300px;
-    height: 1px;
-    background-color: $c-main;
-    position: relative;
-    margin-left: $space-xs;
-    opacity: 0.5;
-  }
 }
 
 .text {
@@ -135,17 +106,6 @@ export default {
     position: relative;
     z-index: 0;
 
-    &::before {
-      content: '';
-      display: block;
-      width: inherit;
-      height: inherit;
-      background-color: $c-navy-light;
-      position: absolute;
-      mix-blend-mode: multiply;
-      transition: opacity $transition 250ms;
-    }
-
     &::after {
       content: '';
       display: block;
@@ -178,6 +138,17 @@ export default {
     &-container {
       margin: 0;
       min-width: 250px;
+
+      &::before {
+        content: '';
+        display: block;
+        width: inherit;
+        height: inherit;
+        background-color: $c-navy-light;
+        position: absolute;
+        mix-blend-mode: multiply;
+        transition: opacity $transition 250ms;
+      }
 
       &:hover,
       &:active {

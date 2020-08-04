@@ -8,35 +8,26 @@
     />
 
     <About :technologies="technologies" />
+
+    <Experience :experience="experience" />
   </main>
 </template>
 
 <script>
 import Introduction from '../page-sections/index/Introduction'
 import About from '../page-sections/index/About'
+import Experience from '../page-sections/index/Experience'
+
+import data from './data'
 
 export default {
   components: {
     Introduction,
     About,
+    Experience,
   },
   data() {
-    return {
-      name: 'Ovie Okeh',
-      shortIntro: 'I guzzle gasoline & sauce',
-      longIntro: `I'm a frontend developer based in Utrecht, NL specializing in building
-      (and occasionally designing) highly dynamic websites, applications, and
-      everything in between.`,
-      roles: ['Software Developer', 'Technical Writer', 'B. Pepper'],
-      technologies: [
-        'HTML & CSS',
-        'JavaScript',
-        'TypeScript',
-        'React',
-        'Vue',
-        'Node.js',
-      ],
-    }
+    return data
   },
 }
 </script>

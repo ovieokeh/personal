@@ -105,7 +105,7 @@ export default {
     toggleMenu(event) {
       let isToggled = false
 
-      if (event.target.classList.contains('menu')) {
+      if (event && event.target.classList.contains('menu')) {
         isToggled = !this.isToggled
       }
 
@@ -219,8 +219,8 @@ export default {
   }
 
   &-button {
-    color: $c-accent;
-    background-color: transparent;
+    color: $c-main;
+    background-color: $c-accent;
     border: 1px solid $c-accent;
     border-radius: 3px;
     padding: $space-xs $space-sm;
@@ -232,9 +232,7 @@ export default {
     transition: all 250ms $transition;
 
     &:hover {
-      background-color: $c-accent;
-      border-color: $c-accent;
-      color: $c-white;
+      background-color: transparent;
     }
   }
 }

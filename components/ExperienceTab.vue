@@ -201,6 +201,7 @@ export default {
       min-width: max-content;
       width: initial;
       margin-right: $space-xxl;
+      overflow-x: hidden;
     }
 
     &-button {

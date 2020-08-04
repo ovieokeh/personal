@@ -12,9 +12,10 @@
           best practices and sometimes I can spend more time on a feature to get
           it juuuust right.
           <br /><br />
-          While I do not have a university degree, I feel my skills and my
-          appetite for learning should more than make up for it. Just don't ask
-          me to solve Gödel's Incompleteness Theorem with JavaScript thanks.
+          I can get productive with new technologies in very little time and I
+          have a large appetite for learning new things. Just don't ask me to
+          solve Gödel's Incompleteness Theorem on a whiteboard with JavaScript
+          😃.
           <br /><br />
           I'm currently not looking for new opportunities but if you think you
           have an offer I can't refuse, get in touch! Here are a few
@@ -136,8 +137,12 @@ export default {
 
   .photo {
     &-container {
+      display: block;
       margin: 0;
       min-width: 250px;
+      top: 0;
+      left: 0;
+      transition: top $transition 250ms, left $transition 250ms;
 
       &::before {
         content: '';
@@ -152,6 +157,10 @@ export default {
 
       &:hover,
       &:active {
+        top: 10px;
+        left: 10px;
+        transition: top $transition 250ms, left $transition 250ms;
+
         &::before {
           opacity: 0;
           transition: opacity $transition 250ms;
@@ -159,8 +168,8 @@ export default {
 
         &::after {
           border-color: $c-navy-light;
-          top: 20px;
-          left: 20px;
+          top: 10px;
+          left: 10px;
           transition: top $transition 250ms, left $transition 250ms;
         }
       }

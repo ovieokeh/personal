@@ -28,7 +28,6 @@ export default {
   font-family: 'Poppins';
   margin-top: 200px;
   padding-top: $space-xxl;
-  min-height: 100vh;
 }
 
 @media screen and (min-width: $bp-large) {

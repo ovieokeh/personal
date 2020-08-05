@@ -60,7 +60,6 @@ export default {
 .container {
   margin-top: 200px;
   padding-top: $space-xxl;
-  min-height: 100vh;
 }
 
 .text {

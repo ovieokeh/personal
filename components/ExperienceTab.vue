@@ -80,7 +80,7 @@ export default {
 .tabs {
   display: block;
   position: relative;
-  min-height: 500px;
+  min-height: 300px;
 
   &-list {
     display: flex;

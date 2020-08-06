@@ -51,4 +51,37 @@ export default {
       ],
     },
   ],
+  projects: [
+    {
+      name: 'My Personal Website',
+      description:
+        "The website you're currently on. It's based off of Brittany Chiang's amazing design. It's also a way for me to gain more experience with Vue.",
+      tags: ['Vue', 'SCSS', 'JavaScript'],
+      demo: '/',
+      source: 'https://github.com/ovieokeh/ovie.dev',
+      image: 'personal-website-ss.png',
+      type: 'Project',
+    },
+    {
+      name: 'Shopstack',
+      description:
+        "A full-stack e-commerce project I did for a technical assessment. I didn't get the job but I retained the skills. Check it out.",
+      tags: ['React', 'SQL', 'JavaScript', 'CSS'],
+      demo: 'http://shopstack-e.herokuapp.com/',
+      source: 'https://github.com/ovieokeh/shopstack',
+      image: 'shopstack-ss.png',
+      type: 'Project',
+    },
+    {
+      name: 'Google Maps React Integration',
+      description:
+        'A demo app showing how to integrate Google Maps in React. It accompanies an article linked below.',
+      tags: ['React', 'Google Maps', 'JavaScript', 'CSS'],
+      demo:
+        'https://blog.logrocket.com/a-practical-guide-to-integrating-google-maps-in-react/',
+      source: 'https://github.com/ovieokeh/contact-page-with-google-maps',
+      image: 'gmaps-integration-ss.png',
+      type: 'Blog post',
+    },
+  ],
 }

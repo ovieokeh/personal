@@ -5,7 +5,8 @@
     <div class="content">
       <div>
         <p class="text">
-          Hello! I'm Ovie, a frontend developer by mistake.
+          Hello! I'm Ovie, a frontend developer by day and part-time insomniac
+          by night.
           <br /><br />
           I build stuff that can be accessed via the web, from websites, dynamic
           components, or technical articles. I care deeply about performance and
@@ -115,8 +116,9 @@ export default {
       position: absolute;
       top: 25px;
       left: 25px;
+      opacity: 0.5;
       z-index: -1;
-      transition: top $transition 250ms, left $transition 250ms;
+      transition: top $transition 250ms 50ms, left $transition 250ms 50ms;
     }
   }
 }
@@ -141,7 +143,7 @@ export default {
       min-width: 250px;
       top: 0;
       left: 0;
-      transition: top $transition 250ms, left $transition 250ms;
+      transition: top $transition 250ms 50ms, left $transition 250ms 50ms;
 
       &::before {
         content: '';
@@ -151,25 +153,27 @@ export default {
         background-color: $c-navy-light;
         position: absolute;
         mix-blend-mode: multiply;
-        transition: opacity $transition 250ms;
+        transition: opacity $transition 250ms 50ms;
       }
 
       &:hover,
       &:active {
         top: 10px;
         left: 10px;
-        transition: top $transition 250ms, left $transition 250ms;
+        transition: top $transition 250ms 35ms, left $transition 250ms 35ms;
 
         &::before {
           opacity: 0;
-          transition: opacity $transition 250ms;
+          transition: opacity $transition 250ms 75ms;
         }
 
         &::after {
           border-color: $c-navy-light;
           top: 10px;
           left: 10px;
-          transition: top $transition 250ms, left $transition 250ms;
+          opacity: 1;
+          transition: top $transition 250ms 50ms, left $transition 250ms 50ms,
+            opacity $transition 250ms 50ms, border-color $transition 250ms 50ms;
         }
       }
     }

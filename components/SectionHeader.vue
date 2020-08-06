@@ -49,7 +49,7 @@ export default {
     content: '';
     display: inline-block;
     width: 100%;
-    max-width: 300px;
+    max-width: 200px;
     height: 1px;
     background-color: $c-main;
     position: relative;
@@ -63,7 +63,7 @@ export default {
     font-size: 24px;
 
     &::after {
-      max-width: 100%;
+      max-width: 25%;
     }
   }
 }

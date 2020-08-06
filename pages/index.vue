@@ -10,6 +10,8 @@
     <About :technologies="technologies" />
 
     <Experience :experience="experience" />
+
+    <Work :projects="projects" />
   </main>
 </template>
 
@@ -17,6 +19,7 @@
 import Introduction from '../page-sections/index/Introduction'
 import About from '../page-sections/index/About'
 import Experience from '../page-sections/index/Experience'
+import Work from '../page-sections/index/Work'
 
 import data from './data'
 
@@ -25,6 +28,7 @@ export default {
     Introduction,
     About,
     Experience,
+    Work,
   },
   data() {
     return data

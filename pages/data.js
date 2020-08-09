@@ -73,6 +73,26 @@ export default {
       type: 'Project',
     },
     {
+      name: 'The Benefits and Trade-offs of Serverless',
+      description:
+        'This is an interesting look at cases where going serverless is a good choice and some caveaets to consider.',
+      tags: ['Serverless', 'AWS', 'Google Cloud'],
+      demo:
+        'https://blog.ovie.dev/the-benefits-and-trade-offs-of-going-serverless-ck9pc3sz40276hjs1tjbu2n6k',
+      image: 'serverless-cloud-ss.jpg',
+      type: 'Blog post',
+    },
+    {
+      name: 'Did I Just Write an Integration or End-to-End Test?',
+      description:
+        'A look into the subtle differences between integration and end-to-end tests. Spoiler, write more integration tests.',
+      tags: ['Testing', 'Integration testing', 'End to end testing'],
+      demo:
+        'https://blog.ovie.dev/did-i-just-write-an-integration-or-an-end-to-end-test-ck8dsg26r017kxes14lhbd0dx',
+      image: 'testing-ss.jpg',
+      type: 'Blog post',
+    },
+    {
       name: 'Google Maps React Integration',
       description:
         'A demo app showing how to integrate Google Maps in React. It accompanies an article linked below.',

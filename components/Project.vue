@@ -59,7 +59,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$project-height: 380px;
+$project-height: 450px;
 
 .project {
   background-color: #3b225d1a;

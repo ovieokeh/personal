@@ -160,7 +160,7 @@ $project-height: 450px;
         color: $c-white;
         padding: $space-sm $space-md;
         opacity: 1;
-        width: 130%;
+        width: 115%;
       }
     }
 

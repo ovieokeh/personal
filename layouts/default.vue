@@ -4,17 +4,21 @@
     <SocialIcons />
 
     <Nuxt />
+
+    <Footer />
   </div>
 </template>
 
 <script>
 import Nav from '../components/Nav'
 import SocialIcons from '../components/SocialIcons'
+import Footer from '../components/Footer'
 
 export default {
   components: {
     Nav,
     SocialIcons,
+    Footer,
   },
   mounted() {
     if (this.$route.hash) {

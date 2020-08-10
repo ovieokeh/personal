@@ -1,15 +1,24 @@
 <template>
   <div class="social-icons">
-    <a class="link" href="https://linkedin.com/in/ovieokeh"
+    <a
+      class="link"
+      href="https://linkedin.com/in/ovieokeh"
+      aria-label="Linkedin icon"
       ><font-awesome-icon class="icon" :icon="['fab', 'linkedin']"
     /></a>
-    <a class="link" href="https://github.com/ovieokeh"
+    <a class="link" href="https://github.com/ovieokeh" aria-label="Github icon"
       ><font-awesome-icon class="icon" :icon="['fab', 'github']"
     /></a>
-    <a class="link" href="https://twitter.com/ovieokeh"
+    <a
+      class="link"
+      href="https://twitter.com/ovieokeh"
+      aria-label="Twitter icon"
       ><font-awesome-icon class="icon" :icon="['fab', 'twitter']"
     /></a>
-    <a class="link" href="https://blog.logrocket.com/author/ovieokeh"
+    <a
+      class="link"
+      href="https://blog.logrocket.com/author/ovieokeh"
+      aria-label="Blog icon"
       ><font-awesome-icon class="icon" :icon="['fas', 'pen']"
     /></a>
   </div>
@@ -30,12 +39,11 @@ export default {
   bottom: 0;
   right: $space-sm;
   z-index: 1;
-  opacity: 0.5;
 
   &::after {
     content: '';
     display: block;
-    background-color: $c-main;
+    background-color: $c-brand;
     width: 1px;
     height: 100%;
     margin: 0 auto;
@@ -44,12 +52,8 @@ export default {
 }
 
 .link {
-  color: $c-main;
+  color: $c-white;
   font-size: 1em;
-
-  &:hover {
-    color: $c-navy-light;
-  }
 }
 
 .icon {
@@ -66,9 +70,10 @@ export default {
 
   .link {
     font-size: 1.5em;
-    transition: transform 250ms $transition;
+    transition: transform 250ms ease 50ms, color ease 300ms;
 
     &:hover {
+      color: $c-light-shades;
       transform: scale(1.5);
     }
   }

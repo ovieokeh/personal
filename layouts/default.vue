@@ -39,7 +39,7 @@ export default {
 
 <style lang="scss">
 #app {
-  background-color: $c-accent-dark;
+  background-color: $c-background;
   padding: 0 $padding-sm;
   height: 100%;
 }

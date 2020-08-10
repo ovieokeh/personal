@@ -1,5 +1,5 @@
 <template>
-  <button class="menu" type="button" @click="onClick">
+  <button class="menu" type="button" aria-label="menu toggle" @click="onClick">
     <span :class="barClassname"></span>
     <span :class="barClassname"></span>
     <span :class="barClassname"></span>
@@ -35,6 +35,7 @@ export default {
   z-index: 1;
   cursor: pointer;
   outline: none;
+  z-index: 1000;
 }
 
 .bar {
@@ -42,7 +43,7 @@ export default {
   position: absolute;
   height: 3px;
   width: 25px;
-  background-color: $c-accent;
+  background-color: $c-light-shades;
   border-radius: 12px;
   opacity: 1;
   left: 0;
@@ -61,6 +62,7 @@ export default {
   }
 
   &.active {
+    background-color: $c-light-shades;
     opacity: 0.6;
     transition: 300ms ease-in-out;
 

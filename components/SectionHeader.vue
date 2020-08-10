@@ -29,7 +29,7 @@ export default {
 .header {
   display: flex;
   align-items: center;
-  color: $c-main;
+  color: $c-light-shades;
   font-size: 18px;
   position: relative;
   margin-bottom: $space-xxl;
@@ -42,7 +42,7 @@ export default {
     counter-increment: section 1;
     font-size: 18px;
     margin-right: 10px;
-    color: $c-accent;
+    color: $c-brand;
   }
 
   &::after {
@@ -51,7 +51,7 @@ export default {
     width: 100%;
     max-width: 200px;
     height: 1px;
-    background-color: $c-main;
+    background-color: $c-brand;
     position: relative;
     margin-left: $space-xs;
     opacity: 0.5;

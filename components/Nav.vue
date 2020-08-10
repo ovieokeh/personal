@@ -1,6 +1,6 @@
 <template>
   <nav class="nav" :style="navStyle">
-    <a class="logo" href="/" name="Home">
+    <a class="logo" href="/" aria-label="Home">
       <Logo />
     </a>
 
@@ -157,7 +157,7 @@ export default {
 
 <style lang="scss" scoped>
 .nav {
-  background-color: $c-accent-dark;
+  background-color: $c-background;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -171,11 +171,11 @@ export default {
 }
 
 .logo {
-  color: $c-accent;
+  color: $c-light-shades;
   text-decoration: none;
 
   &:hover {
-    color: $c-navy-light;
+    color: $c-light-shades;
   }
 }
 
@@ -184,17 +184,18 @@ export default {
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  background-color: $c-fogra;
+  background-color: $c-dark-shades;
   position: fixed;
   right: 0;
   bottom: 0;
   top: 0;
   transition: width 250ms $transition;
+  z-index: 999;
 
   &.active::after {
     content: '';
     display: block;
-    background-color: rgba(13, 31, 45, 0.4);
+    background-color: transparentize($color: $c-background, $amount: 0.8);
     backdrop-filter: blur(2px);
 
     height: 100%;
@@ -209,19 +210,19 @@ export default {
 .link {
   font-size: 16px;
   text-decoration: none;
-  color: $c-accent;
+  color: $c-white;
   padding: $space-md $space-sm;
 
   &-index {
     display: block;
-    color: $c-accent-light;
+    color: $c-brand;
     pointer-events: none;
   }
 
   &-button {
-    color: $c-main;
-    background-color: $c-accent;
-    border: 1px solid $c-accent;
+    color: $c-dark-shades;
+    background-color: $c-brand;
+    border: 1px solid $c-brand;
     border-radius: 3px;
     padding: $space-xs $space-sm;
     margin: $space-xs $space-md;
@@ -230,10 +231,6 @@ export default {
     line-height: 1;
     text-decoration: none;
     transition: all 250ms $transition;
-
-    &:hover {
-      background-color: transparent;
-    }
   }
 }
 
@@ -254,23 +251,28 @@ export default {
   .link {
     font-size: 14px;
     text-decoration: none;
-    color: $c-main;
+    color: $c-light-shades;
     padding: $space-sm;
 
     &:hover,
     &:hover &-index {
-      color: $c-navy-light;
+      color: $c-brand;
     }
 
     &-index {
       display: inline;
-      color: $c-accent;
+      color: $c-brand;
     }
 
     &-button {
       font-size: 14px;
       margin: 0;
       margin-left: $space-sm;
+
+      &:hover {
+        color: $c-brand;
+        background-color: transparent;
+      }
     }
   }
 }

@@ -1,7 +1,7 @@
 <template>
   <div class="tabs">
-    <ul role="tabslist" aria-label="Experience tabs" class="tabs-list">
-      <li v-for="(role, index) in experience" :key="role.company">
+    <ul role="tablist" aria-label="Experience tabs" class="tabs-list">
+      <li v-for="(role, index) in experience" :key="role.company" role="tab">
         <button
           :id="`tab-${index}`"
           :class="
@@ -9,7 +9,6 @@
               ? 'tabs-button selected'
               : 'tabs-button'
           "
-          role="tab"
           type="button"
           @click="selectExperience(role, index)"
         >
@@ -21,13 +20,13 @@
     </ul>
 
     <div role="tabpanel" class="tabs-panel">
-      <h4 class="tabs-roletitle">
+      <h2 class="tabs-roletitle">
         {{ selectedExperience.designation }}
         <a :href="selectedExperience.url" class="tabs-roletitle--company">
           @
           {{ selectedExperience.company }}
         </a>
-      </h4>
+      </h2>
       <p class="tabs-date">{{ selectedExperience.date }}</p>
 
       <ul class="tabs-roles">
@@ -99,6 +98,10 @@ export default {
     }
   }
 
+  &-panel {
+    min-height: 360px;
+  }
+
   &-button {
     display: flex;
     align-items: center;
@@ -106,13 +109,13 @@ export default {
     width: 100%;
     width: 150px;
     background-color: transparent;
-    color: $c-main;
+    color: $c-white;
     font-size: 14px;
     height: 40px;
     padding: 0 $space-sm;
     transition: $transition;
     border-style: none;
-    border-bottom: 2px solid $c-accent-light;
+    border-bottom: 2px solid $c-brand;
     border-radius: 0;
     white-space: nowrap;
     outline: none;
@@ -121,20 +124,19 @@ export default {
 
     &:hover,
     &.selected {
-      background-color: $c-accent-transparent;
-      color: $c-accent;
+      background-color: transparentize($color: $c-brand, $amount: 0.9);
       opacity: 1;
     }
   }
 
   &-roletitle {
-    color: $c-main;
+    color: $c-light-shades;
     font-size: 18px;
     font-weight: 500;
     margin-bottom: $space-xs;
 
     &--company {
-      color: $c-accent;
+      color: $c-white;
       text-decoration: none;
     }
   }
@@ -143,15 +145,14 @@ export default {
     font-size: 13px;
     font-weight: 300;
     letter-spacing: 0.05em;
-    color: $c-main;
+    color: $c-brand;
     margin-bottom: $space-md;
   }
 
   &-roles {
-    color: $c-main;
+    color: $c-white;
     font-size: 16px;
     font-weight: 300;
-    opacity: 0.8;
     list-style: none;
     padding-left: 0;
 
@@ -165,7 +166,6 @@ export default {
         content: '▹';
         position: absolute;
         left: 0;
-        color: $c-accent-light;
         font-size: 18px;
         line-height: 20px;
       }
@@ -175,7 +175,7 @@ export default {
 
 .highlight {
   display: block;
-  background: $c-accent;
+  background: $c-light-shades;
   height: 2px;
   border-radius: 5px;
   position: absolute;
@@ -208,17 +208,16 @@ export default {
       justify-content: flex-start;
       width: 200px;
       border-bottom: 0;
-      border-left: 2px solid $c-accent-light;
+      border-left: 2px solid $c-brand;
       white-space: normal;
       cursor: pointer;
     }
 
     &-roletitle--company:hover {
-      color: $c-navy-light;
+      color: $c-light-shades;
     }
 
     &-roles {
-      color: $c-main;
       font-size: 16px;
       font-weight: 300;
       opacity: 0.8;
@@ -235,7 +234,7 @@ export default {
 
   .highlight {
     display: block;
-    background: $c-accent;
+    background: $c-light-shades;
     width: 2px;
     height: 40px;
     border-radius: 3px;

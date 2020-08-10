@@ -19,7 +19,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: $c-accent-light;
+  color: $c-brand;
   margin-top: $space-xxl;
   opacity: 0.7;
 
@@ -33,12 +33,7 @@
 
     &-link {
       text-decoration: none;
-      color: $c-accent;
-      transition: color ease 200ms 50ms;
-
-      &:hover {
-        color: $c-navy-light;
-      }
+      color: $c-white;
     }
   }
 }

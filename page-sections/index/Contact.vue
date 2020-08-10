@@ -29,7 +29,7 @@ export default {
 
   &-header {
     font-size: 14px;
-    color: $c-accent-light;
+    color: $c-brand;
     font-weight: 300;
     text-align: center;
   }
@@ -37,14 +37,14 @@ export default {
 
 .form {
   &-intro {
-    color: $c-main;
+    color: $c-light-shades;
     text-align: center;
     margin: $space-sm 0;
     margin-bottom: $space-xl;
   }
 
   &-description {
-    color: $c-main;
+    color: $c-white;
     opacity: 0.7;
     text-align: center;
     margin: $space-md 0;
@@ -53,10 +53,11 @@ export default {
   &-button {
     text-decoration: none;
     display: block;
-    color: $c-navy-light;
-    border: 1px solid $c-navy-light;
+    color: $c-light-shades;
+    border: 1px solid $c-light-shades;
     padding: $space-xs $space-md;
     text-align: center;
+    max-width: 200px;
     margin: $space-md auto;
     margin-top: $space-xl;
   }
@@ -75,11 +76,13 @@ export default {
 
     &-button {
       max-width: 40%;
-      transition: background-color ease 200ms 50ms, color ease 200ms 65ms;
+      transition: background-color ease 200ms 50ms, border-color ease 250ms 50ms,
+        color ease 300ms;
 
       &:hover {
-        background-color: $c-navy-dark;
-        color: $c-main;
+        border-color: $c-brand;
+        background-color: $c-brand;
+        color: $c-background;
         cursor: pointer;
       }
     }

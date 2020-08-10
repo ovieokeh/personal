@@ -52,9 +52,9 @@ export default {
   &-projects,
   &-posts {
     display: inline-block;
-    background-color: $c-navy-dark;
-    color: $c-accent-light;
-    border: 1px solid $c-navy-dark;
+    background-color: transparent;
+    color: $c-light-shades;
+    border: 1px solid $c-light-shades;
     border-radius: 4px;
     font-size: 14px;
     text-decoration: none;
@@ -66,6 +66,20 @@ export default {
 @media screen and (min-width: $bp-large) {
   .container {
     padding-top: $space-xxxl;
+  }
+
+  .more {
+    &-projects,
+    &-posts {
+      margin: 0;
+      margin-right: $space-xs;
+      transition: background-color ease 250ms 50ms, color ease 300ms;
+
+      &:hover {
+        background-color: $c-light-shades;
+        color: $c-dark-shades;
+      }
+    }
   }
 }
 </style>

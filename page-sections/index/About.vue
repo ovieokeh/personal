@@ -64,7 +64,7 @@ export default {
 }
 
 .text {
-  color: $c-main;
+  color: $c-light-shades;
   font-family: 'Poppins';
 }
 
@@ -82,13 +82,13 @@ export default {
   margin-bottom: 10px;
   padding-left: 20px;
   font-size: 13px;
-  color: $c-main;
+  color: $c-brand;
 
   &::before {
     content: '▹';
     position: absolute;
     left: 0;
-    color: $c-accent-light;
+    color: $c-brand;
     font-size: 14px;
     line-height: 12px;
   }
@@ -112,7 +112,7 @@ export default {
       display: block;
       width: inherit;
       height: inherit;
-      border: 2px solid $c-main;
+      border: 2px solid $c-brand;
       position: absolute;
       top: 25px;
       left: 25px;
@@ -150,7 +150,7 @@ export default {
         display: block;
         width: inherit;
         height: inherit;
-        background-color: $c-navy-light;
+        background-color: transparentize($color: $c-brand, $amount: 0.6);
         position: absolute;
         mix-blend-mode: multiply;
         transition: opacity $transition 250ms 50ms;
@@ -168,7 +168,7 @@ export default {
         }
 
         &::after {
-          border-color: $c-navy-light;
+          border-color: $c-light-shades;
           top: 10px;
           left: 10px;
           opacity: 1;

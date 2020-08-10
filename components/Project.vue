@@ -13,14 +13,14 @@
       <div class="project-content-links">
         <a
           :href="project.demo"
-          name="Demo Link"
+          :aria-label="`${project.name} content link`"
           class="project-content-links-link"
         >
           <font-awesome-icon class="icon" :icon="['fa', 'external-link-alt']" />
         </a>
         <a
           :href="project.source"
-          name="Source Link"
+          :aria-label="`${project.name} source link`"
           class="project-content-links-link"
         >
           <font-awesome-icon class="icon" :icon="['fab', 'github']" />
@@ -28,7 +28,11 @@
       </div>
     </div>
 
-    <a :href="project.demo" class="project-image-container">
+    <a
+      :href="project.demo"
+      class="project-image-container"
+      :aria-label="`${project.name} Link`"
+    >
       <img
         :src="`/images/${project.image}`"
         :alt="`Project ${project.name}'s Screenshot`"
@@ -77,11 +81,11 @@ $project-height: 450px;
     flex-direction: column;
     justify-content: center;
     height: 100%;
-    color: $c-main;
+    color: $c-white;
 
     &-type {
       font-family: 'Source Code Pro';
-      color: $c-navy-light;
+      color: $c-light-shades;
       display: block;
       margin: $space-xs 0;
     }
@@ -91,21 +95,21 @@ $project-height: 450px;
     }
 
     &-description {
+      color: $c-light-shades;
       margin: $space-sm 0;
       line-height: 28px;
-      opacity: 0.7;
     }
 
     &-tag {
       display: block;
       font-size: 14px;
       margin: $space-sm 0;
-      opacity: 0.5;
+      opacity: 0.8;
     }
 
     &-links {
       &-link {
-        color: $c-main;
+        color: $c-light-accent;
         font-size: 24px;
         margin-right: $space-xs;
       }
@@ -113,6 +117,7 @@ $project-height: 450px;
   }
 
   &-image {
+    display: block;
     height: 100%;
     width: 100%;
     object-fit: cover;
@@ -162,6 +167,10 @@ $project-height: 450px;
         opacity: 1;
         width: 115%;
       }
+
+      &-links-link:hover {
+        color: $c-light-shades;
+      }
     }
 
     &-image {
@@ -170,17 +179,25 @@ $project-height: 450px;
       object-position: 0 0;
 
       &-container {
-        box-shadow: unset;
         height: auto;
         width: auto;
         position: relative;
         opacity: 1;
-        filter: grayscale(100%);
         transform: perspective(1000px) rotateY(-25deg);
-        transition: filter 300ms $transition 50ms;
 
-        &:hover {
-          filter: unset;
+        &::before {
+          content: '';
+          display: block;
+          width: 100%;
+          height: 100%;
+          background-color: transparentize($color: $c-brand, $amount: 0.6);
+          position: absolute;
+          mix-blend-mode: multiply;
+          transition: background-color ease 250ms 50ms;
+        }
+
+        &:hover::before {
+          background-color: transparent;
         }
       }
     }

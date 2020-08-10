@@ -42,7 +42,7 @@ export default {
 <style lang="scss" scoped>
 .hi {
   font-size: 14px;
-  color: $c-accent;
+  color: $c-brand;
   margin: $space-sm 0;
 }
 
@@ -52,7 +52,7 @@ export default {
 .role,
 .friendly {
   font-family: 'Poppins';
-  color: $c-main;
+  color: $c-light-shades;
 }
 
 .name {
@@ -80,34 +80,29 @@ export default {
 }
 
 .role {
-  color: $c-main;
+  color: $c-white;
   margin: $space-sm 0;
 }
 
 .friendly {
   display: block;
-  color: $c-accent;
+  color: $c-light-shades;
   background-color: transparent;
-  border: 1px solid $c-accent;
+  border: 1px solid $c-light-shades;
   border-radius: 3px;
   padding: $space-sm;
   margin-top: $space-xl;
   width: fit-content;
   font-size: 16px;
   text-decoration: none;
-  transition: all 250ms $transition;
-}
-.friendly:hover {
-  background-color: $c-accent;
-  border-color: $c-accent;
-  color: $c-white;
+  transition: background-color ease 250ms 50ms, border-color ease 250ms 50ms,
+    color ease 300ms;
 }
 
 @media screen and (min-width: $bp-large) {
   .name,
   .short-intro {
     font-size: 70px;
-    color: $c-main;
   }
 
   .short-intro {
@@ -120,6 +115,12 @@ export default {
 
   .friendly {
     font-size: 18px;
+
+    &:hover {
+      background-color: $c-brand;
+      border-color: $c-brand;
+      color: $c-background;
+    }
   }
 }
 </style>

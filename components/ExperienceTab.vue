@@ -1,7 +1,12 @@
 <template>
   <div class="tabs">
     <ul role="tablist" aria-label="Experience tabs" class="tabs-list">
-      <li v-for="(role, index) in experience" :key="role.company" role="tab">
+      <li
+        v-for="(role, index) in experience"
+        :key="role.company"
+        role="tab"
+        class="tabs-list-li"
+      >
         <button
           :id="`tab-${index}`"
           :class="
@@ -95,6 +100,10 @@ export default {
 
     &:first-of-type {
       margin-left: 0;
+    }
+
+    &-li {
+      color: $c-white;
     }
   }
 

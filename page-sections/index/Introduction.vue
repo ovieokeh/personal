@@ -2,17 +2,19 @@
   <section id="intro" class="introduction">
     <h3 class="hi">Hi, my name is</h3>
     <h2 class="name">{{ name }}.</h2>
-    <h2 class="short-intro">{{ shortIntro }}</h2>
+    <h2 class="tagline">{{ tagline }}</h2>
 
     <p class="intro">
-      {{ longIntro }}
+      {{ intro }}
     </p>
 
     <ul class="roles">
-      <li v-for="role in roles" :key="role" class="role">{{ role }}</li>
+      <li v-for="role in roles" :key="role" class="role">
+        {{ role }}
+      </li>
     </ul>
 
-    <a href="mailto:kevinokeh@gmail.com" class="friendly">Get In Touch</a>
+    <a :href="`mailto:${email}`" class="friendly">Get In Touch</a>
   </section>
 </template>
 
@@ -23,11 +25,15 @@ export default {
       type: String,
       required: true,
     },
-    shortIntro: {
+    email: {
       type: String,
       required: true,
     },
-    longIntro: {
+    tagline: {
+      type: String,
+      required: true,
+    },
+    intro: {
       type: String,
       required: true,
     },
@@ -47,7 +53,7 @@ export default {
 }
 
 .name,
-.short-intro,
+.tagline,
 .intro,
 .role,
 .friendly {
@@ -56,12 +62,13 @@ export default {
 }
 
 .name {
+  color: $c-dark-accent;
   font-size: 42px;
   font-weight: 600;
   margin: 0;
 }
 
-.short-intro {
+.tagline {
   font-size: 24px;
   opacity: 0.7;
   margin: 0;
@@ -101,11 +108,11 @@ export default {
 
 @media screen and (min-width: $bp-large) {
   .name,
-  .short-intro {
+  .tagline {
     font-size: 70px;
   }
 
-  .short-intro {
+  .tagline {
     font-size: 62px;
   }
 

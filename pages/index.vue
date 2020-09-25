@@ -1,30 +1,33 @@
 <template>
   <main class="home">
-    <Introduction
-      :name="name"
-      :short-intro="shortIntro"
-      :long-intro="longIntro"
-      :roles="roles"
-    />
+    <template v-if="!isLoading">
+      <Introduction
+        :name="pageData.name"
+        :email="pageData.email"
+        :intro="pageData.intro"
+        :roles="pageData.roles"
+        :tagline="pageData.tagline"
+      />
 
-    <About :technologies="technologies" />
+      <About :technologies="pageData.technologies" />
 
-    <Experience :experience="experience" />
+      <Experience :experience="pageData.experience.data" />
 
-    <Work :projects="projects" />
+      <Work :projects="pageData.projects.data" />
 
-    <Contact />
+      <Contact />
+    </template>
   </main>
 </template>
 
 <script>
+import getData from '../api/getData'
+
 import Introduction from '../page-sections/index/Introduction'
 import About from '../page-sections/index/About'
 import Experience from '../page-sections/index/Experience'
 import Work from '../page-sections/index/Work'
 import Contact from '../page-sections/index/Contact'
-
-import data from './data'
 
 export default {
   components: {
@@ -35,7 +38,13 @@ export default {
     Contact,
   },
   data() {
-    return data
+    return {
+      isLoading: true,
+      pageData: {},
+    }
+  },
+  created() {
+    getData('37jZbmQSggC4cQCNrjIXYI', this)
   },
 }
 </script>

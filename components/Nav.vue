@@ -220,8 +220,8 @@ export default {
   }
 
   &-button {
-    color: $c-dark-shades;
-    background-color: $c-brand;
+    color: $c-light-shades;
+    background-color: transparent;
     border: 1px solid $c-brand;
     border-radius: 3px;
     padding: $space-xs $space-sm;
@@ -270,8 +270,8 @@ export default {
       margin-left: $space-sm;
 
       &:hover {
-        color: $c-brand;
-        background-color: transparent;
+        color: $c-background;
+        background-color: $c-brand;
       }
     }
   }

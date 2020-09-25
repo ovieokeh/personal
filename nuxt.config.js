@@ -1,6 +1,10 @@
 import seoConfig from './seoConfig'
 
 export default {
+  env: {
+    cfAccessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+    cfSpaceId: process.env.CONTENTFUL_BLOG_SPACE_ID,
+  },
   /*
    ** Nuxt rendering mode
    ** See https://nuxtjs.org/api/configuration-mode

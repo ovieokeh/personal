@@ -80,8 +80,8 @@ export default {
         color ease 300ms;
 
       &:hover {
-        border-color: $c-brand;
-        background-color: $c-brand;
+        border-color: $c-light-shades;
+        background-color: $c-light-shades;
         color: $c-background;
         cursor: pointer;
       }

@@ -43,7 +43,7 @@ export default {
   &::after {
     content: '';
     display: block;
-    background-color: $c-brand;
+    background-color: $c-dark-accent;
     width: 1px;
     height: 100%;
     margin: 0 auto;

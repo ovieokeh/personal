@@ -36,8 +36,8 @@ const links = [
     link: '#experience',
   },
   {
-    label: 'Work',
-    link: '#work',
+    label: 'Projects',
+    link: '#projects',
   },
   {
     label: 'Contact',

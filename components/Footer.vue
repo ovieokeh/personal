@@ -10,7 +10,7 @@
       ></span
     >
 
-    <span class="footer-subtext"
+    <span class="footer-powered"
       >Powered by <a href="https://buttercms.com"> <ContentfulLogo /></a
     ></span>
   </footer>
@@ -42,13 +42,10 @@ export default {
   }
 
   &-subtext {
-    display: flex;
-    align-items: center;
     font-size: 14px;
     margin: $space-sm 0;
 
     &-link {
-      padding-left: $space-sm;
       text-decoration: none;
       color: $c-light-accent;
 
@@ -56,6 +53,12 @@ export default {
         color: $c-white;
       }
     }
+  }
+
+  &-powered {
+    display: flex;
+    align-items: center;
+    margin: $space-sm 0 $space-xl;
   }
 
   svg {

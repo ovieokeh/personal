@@ -13,7 +13,9 @@
 
       <Experience :experience="pageData.experience.data" />
 
-      <Work :projects="pageData.projects.data" />
+      <Projects :projects="pageData.projects.data" />
+
+      <Posts />
 
       <Contact />
     </template>
@@ -21,20 +23,22 @@
 </template>
 
 <script>
-import getData from '../api/getData'
+import getData from '~/api/getData'
 
-import Introduction from '../page-sections/index/Introduction'
-import About from '../page-sections/index/About'
-import Experience from '../page-sections/index/Experience'
-import Work from '../page-sections/index/Work'
-import Contact from '../page-sections/index/Contact'
+import Introduction from '~/page-sections/index/Introduction'
+import About from '~/page-sections/index/About'
+import Experience from '~/page-sections/index/Experience'
+import Projects from '~/page-sections/index/Projects'
+import Posts from '~/page-sections/index/Posts'
+import Contact from '~/page-sections/index/Contact'
 
 export default {
   components: {
     Introduction,
     About,
     Experience,
-    Work,
+    Projects,
+    Posts,
     Contact,
   },
   data() {

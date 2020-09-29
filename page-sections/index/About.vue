@@ -150,7 +150,7 @@ export default {
         display: block;
         width: inherit;
         height: inherit;
-        background-color: transparentize($color: $c-brand, $amount: 0.6);
+        background-color: transparentize($color: $c-dark-accent, $amount: 0.6);
         position: absolute;
         mix-blend-mode: multiply;
         transition: opacity $transition 250ms 50ms;

@@ -1,8 +1,6 @@
 <template>
   <div :class="className">
     <div class="project-content">
-      <span class="project-content-type">{{ project.type }}</span>
-
       <h3 class="project-content-name">{{ project.name }}</h3>
       <p class="project-content-description">{{ project.description }}</p>
 
@@ -105,6 +103,7 @@ $project-height: 450px;
       font-size: 14px;
       margin: $space-sm 0;
       opacity: 0.8;
+      font-style: italic;
     }
 
     &-links {
@@ -143,6 +142,7 @@ $project-height: 450px;
     align-items: center;
     min-height: unset;
     height: unset;
+    padding: 0;
 
     &.alternate {
       direction: rtl;
@@ -156,6 +156,7 @@ $project-height: 450px;
       border-radius: 8px 0 0 8px;
       direction: ltr;
       text-align: right;
+      transform: translateX($space-md);
     }
 
     &-content {
@@ -165,7 +166,8 @@ $project-height: 450px;
         color: $c-white;
         padding: $space-sm $space-md;
         opacity: 1;
-        width: 115%;
+        width: 100%;
+        transform: translateX(-$space-md);
       }
 
       &-links-link:hover {
@@ -190,7 +192,10 @@ $project-height: 450px;
           display: block;
           width: 100%;
           height: 100%;
-          background-color: transparentize($color: $c-brand, $amount: 0.6);
+          background-color: transparentize(
+            $color: $c-light-accent,
+            $amount: 0.6
+          );
           position: absolute;
           mix-blend-mode: multiply;
           transition: background-color ease 250ms 50ms;

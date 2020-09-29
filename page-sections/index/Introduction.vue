@@ -48,7 +48,6 @@ export default {
 <style lang="scss" scoped>
 .hi {
   font-size: 14px;
-  color: $c-brand;
   margin: $space-sm 0;
 }
 
@@ -61,14 +60,19 @@ export default {
   color: $c-light-shades;
 }
 
+.hi,
 .name {
   color: $c-dark-accent;
+}
+
+.name {
   font-size: 42px;
   font-weight: 600;
   margin: 0;
 }
 
 .tagline {
+  color: $c-light-accent;
   font-size: 24px;
   opacity: 0.7;
   margin: 0;
@@ -124,8 +128,8 @@ export default {
     font-size: 18px;
 
     &:hover {
-      background-color: $c-brand;
-      border-color: $c-brand;
+      background-color: $c-light-shades;
+      border-color: $c-light-shades;
       color: $c-background;
     }
   }

@@ -67,7 +67,7 @@ export default {
     display: flex;
     flex-direction: column;
     padding: 120px $padding-lg;
-    max-width: 1200px;
+    max-width: $site-width;
     margin: 0 auto;
   }
 }

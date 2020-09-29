@@ -3,14 +3,14 @@
     <span class="footer-text"
       >Built by Ovie Okeh &copy;{{ new Date().getFullYear() }}</span
     >
-    <span class="footer-subtext"
+    <span class="footer-text"
       >Thanks to
-      <a class="footer-subtext-link" href="https://brittanychiang.com"
+      <a class="footer-text-link" href="https://brittanychiang.com"
         >Brittany Chiang's design</a
       ></span
     >
 
-    <span class="footer-powered"
+    <span class="footer-text footer-powered"
       >Powered by <a href="https://buttercms.com"> <ContentfulLogo /></a
     ></span>
   </footer>
@@ -31,19 +31,14 @@ export default {
   min-height: 80px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: $c-brand;
+  color: $c-dark-accent;
   margin-top: $space-xxl;
   opacity: 0.7;
 
   &-text {
-    font-family: 'Poppins';
-  }
-
-  &-subtext {
     font-size: 14px;
-    margin: $space-sm 0;
+    font-family: 'Poppins';
+    margin-bottom: $space-sm;
 
     &-link {
       text-decoration: none;
@@ -58,7 +53,6 @@ export default {
   &-powered {
     display: flex;
     align-items: center;
-    margin: $space-sm 0 $space-xl;
   }
 
   svg {
@@ -68,6 +62,12 @@ export default {
     &:hover {
       filter: grayscale(100);
     }
+  }
+}
+
+@media screen and (min-width: $bp-large) {
+  .footer {
+    align-items: center;
   }
 }
 </style>

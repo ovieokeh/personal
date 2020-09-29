@@ -52,7 +52,7 @@ export default {
 }
 
 .link {
-  color: $c-white;
+  color: $c-dark-accent;
   font-size: 1em;
 }
 
@@ -73,7 +73,7 @@ export default {
     transition: transform 250ms ease 50ms, color ease 300ms;
 
     &:hover {
-      color: $c-light-shades;
+      color: $c-white;
       transform: scale(1.5);
     }
   }

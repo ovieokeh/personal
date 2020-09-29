@@ -42,7 +42,7 @@ export default {
     counter-increment: section 1;
     font-size: 18px;
     margin-right: 10px;
-    color: $c-brand;
+    color: $c-dark-accent;
   }
 
   &::after {
@@ -51,7 +51,7 @@ export default {
     width: 100%;
     max-width: 200px;
     height: 1px;
-    background-color: $c-brand;
+    background-color: $c-dark-accent;
     position: relative;
     margin-left: $space-xs;
     opacity: 0.5;

@@ -29,16 +29,14 @@ export default {
 
   &-header {
     font-size: 14px;
-    color: $c-brand;
+    color: $c-dark-accent;
     font-weight: 300;
-    text-align: center;
   }
 }
 
 .form {
   &-intro {
     color: $c-light-shades;
-    text-align: center;
     margin: $space-sm 0;
     margin-bottom: $space-xl;
   }
@@ -46,7 +44,6 @@ export default {
   &-description {
     color: $c-white;
     opacity: 0.7;
-    text-align: center;
     margin: $space-md 0;
   }
 
@@ -58,7 +55,7 @@ export default {
     padding: $space-xs $space-md;
     text-align: center;
     max-width: 200px;
-    margin: $space-md auto;
+    margin: $space-md 0;
     margin-top: $space-xl;
   }
 }
@@ -66,15 +63,26 @@ export default {
 @media screen and (min-width: $bp-large) {
   .container {
     padding-top: $space-xxxl;
+
+    &-header {
+      text-align: center;
+    }
   }
 
   .form {
+    &-intro,
+    &-description {
+      text-align: center;
+    }
+
     &-container {
       max-width: 500px;
       margin: auto;
     }
 
     &-button {
+      margin: $space-md auto;
+      margin-top: $space-xl;
       max-width: 40%;
       transition: background-color ease 200ms 50ms, border-color ease 250ms 50ms,
         color ease 300ms;

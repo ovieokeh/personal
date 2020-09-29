@@ -82,13 +82,13 @@ export default {
   margin-bottom: 10px;
   padding-left: 20px;
   font-size: 13px;
-  color: $c-brand;
+  color: $c-dark-accent;
 
   &::before {
     content: '▹';
     position: absolute;
     left: 0;
-    color: $c-brand;
+    color: $c-dark-accent;
     font-size: 14px;
     line-height: 12px;
   }
@@ -112,7 +112,7 @@ export default {
       display: block;
       width: inherit;
       height: inherit;
-      border: 2px solid $c-brand;
+      border: 2px solid $c-dark-accent;
       position: absolute;
       top: 25px;
       left: 25px;

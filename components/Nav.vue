@@ -215,14 +215,14 @@ export default {
 
   &-index {
     display: block;
-    color: $c-brand;
+    color: $c-dark-accent;
     pointer-events: none;
   }
 
   &-button {
     color: $c-light-shades;
     background-color: transparent;
-    border: 1px solid $c-brand;
+    border: 1px solid $c-dark-accent;
     border-radius: 3px;
     padding: $space-xs $space-sm;
     margin: $space-xs $space-md;
@@ -256,12 +256,12 @@ export default {
 
     &:hover,
     &:hover &-index {
-      color: $c-brand;
+      color: $c-dark-accent;
     }
 
     &-index {
       display: inline;
-      color: $c-brand;
+      color: $c-dark-accent;
     }
 
     &-button {
@@ -270,8 +270,8 @@ export default {
       margin-left: $space-sm;
 
       &:hover {
-        color: $c-background;
-        background-color: $c-brand;
+        color: $c-black;
+        background-color: $c-dark-accent;
       }
     }
   }

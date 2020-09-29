@@ -11,13 +11,15 @@ $c-black: #000;
 $padding-lg: 36px;
 $padding-sm: calc(#{$padding-lg} / 2);
 
-$space-xs: 8px;
-$space-sm: 16px;
-$space-md: 24px;
-$space-lg: 32px;
-$space-xl: 40px;
-$space-xxl: 48px;
-$space-xxxl: 56px;
+$grid-pt: 8px;
+
+$space-xs: 1 * $grid-pt;
+$space-sm: 2 * $grid-pt;
+$space-md: 3 * $grid-pt;
+$space-lg: 4 * $grid-pt;
+$space-xl: 5 * $grid-pt;
+$space-xxl: 6 * $grid-pt;
+$space-xxxl: 7 * $grid-pt;
 
 $bp-large: 768px;
 

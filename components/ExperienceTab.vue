@@ -124,7 +124,7 @@ export default {
     padding: 0 $space-sm;
     transition: $transition;
     border-style: none;
-    border-bottom: 2px solid $c-brand;
+    border-bottom: 2px solid $c-dark-accent;
     border-radius: 0;
     white-space: nowrap;
     outline: none;
@@ -133,7 +133,7 @@ export default {
 
     &:hover,
     &.selected {
-      background-color: transparentize($color: $c-brand, $amount: 0.9);
+      background-color: transparentize($color: $c-dark-accent, $amount: 0.9);
       opacity: 1;
     }
   }
@@ -154,7 +154,7 @@ export default {
     font-size: 13px;
     font-weight: 300;
     letter-spacing: 0.05em;
-    color: $c-brand;
+    color: $c-dark-accent;
     margin-bottom: $space-md;
   }
 
@@ -217,7 +217,7 @@ export default {
       justify-content: flex-start;
       width: 200px;
       border-bottom: 0;
-      border-left: 2px solid $c-brand;
+      border-left: 2px solid $c-dark-accent;
       white-space: normal;
       cursor: pointer;
     }

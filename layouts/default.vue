@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <Nav />
-    <SocialIcons />
 
     <Nuxt />
 
@@ -11,13 +10,11 @@
 
 <script>
 import Nav from '../components/Nav'
-import SocialIcons from '../components/SocialIcons'
 import Footer from '../components/Footer'
 
 export default {
   components: {
     Nav,
-    SocialIcons,
     Footer,
   },
   mounted() {

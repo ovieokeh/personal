@@ -13,15 +13,19 @@
     <span class="footer-text footer-powered"
       >Powered by <a href="https://buttercms.com"> <ContentfulLogo /></a
     ></span>
+
+    <SocialIcons />
   </footer>
 </template>
 
 <script>
 import ContentfulLogo from './ContentfulLogo'
+import SocialIcons from './SocialIcons'
 
 export default {
   components: {
     ContentfulLogo,
+    SocialIcons,
   },
 }
 </script>

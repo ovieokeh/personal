@@ -33,42 +33,45 @@ export default {
 <style lang="scss" scoped>
 .social-icons {
   display: flex;
-  flex-direction: column;
-  height: 200px;
-  position: fixed;
+  position: relative;
+  margin-bottom: $space-sm;
   bottom: 0;
-  right: $space-sm;
-  z-index: 1;
-
-  &::after {
-    content: '';
-    display: block;
-    background-color: $c-dark-accent;
-    width: 1px;
-    height: 100%;
-    margin: 0 auto;
-    margin-top: $space-sm;
-  }
 }
 
 .link {
   color: $c-dark-accent;
-  font-size: 1em;
+  font-size: 1.5em;
 }
 
 .icon {
   color: inherit;
   cursor: pointer;
-  margin: $space-xs 0;
+  margin-right: $space-sm;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: $bp-large) {
   .social-icons {
+    position: fixed;
+    flex-direction: column;
     height: 350px;
-    right: $padding-lg;
+    bottom: 0;
+    left: $padding-lg;
+    margin-bottom: 0;
+    z-index: 1;
+
+    &::after {
+      content: '';
+      display: block;
+      background-color: $c-dark-accent;
+      width: 1px;
+      height: 100%;
+      margin: 0 auto;
+      margin-top: $space-sm;
+    }
   }
 
   .link {
+    color: $c-dark-accent;
     font-size: 1.5em;
     transition: transform 250ms ease 50ms, color ease 300ms;
 
@@ -79,6 +82,8 @@ export default {
   }
 
   .icon {
+    color: inherit;
+    cursor: pointer;
     margin: $space-xs 0;
   }
 }

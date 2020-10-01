@@ -40,6 +40,10 @@ const links = [
     link: '#projects',
   },
   {
+    label: 'Articles',
+    link: '#posts',
+  },
+  {
     label: 'Contact',
     link: '#contact',
   },
@@ -236,7 +240,6 @@ export default {
 
 @media screen and (min-width: $bp-large) {
   .nav {
-    max-width: $site-width;
     margin: 0 auto;
     padding: $padding-sm $padding-lg;
   }

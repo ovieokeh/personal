@@ -1,6 +1,6 @@
 <template>
   <section id="contact" class="container">
-    <h3 class="container-header">04. Get in touch</h3>
+    <h3 class="container-header">05. Get in touch</h3>
 
     <div class="form-container">
       <h2 class="form-intro">I would love to hear from you.</h2>

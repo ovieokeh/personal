@@ -4,6 +4,7 @@ export default (limit, state) => {
   client
     .getEntries({
       content_type: 'blogPost',
+      order: '-fields.date',
       limit,
     })
     .then((entry) => {

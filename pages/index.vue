@@ -67,7 +67,6 @@ export default {
   position: relative;
   padding-top: 90px;
   padding-bottom: $space-lg;
-  padding-right: $padding-sm;
 }
 
 @media screen and (min-width: $bp-large) {

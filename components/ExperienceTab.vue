@@ -15,7 +15,7 @@
               : 'tabs-button'
           "
           type="button"
-          @click="selectExperience(role, index)"
+          @click="selectExperience(role, index, $event)"
         >
           <span>{{ role.company }}</span>
         </button>
@@ -72,7 +72,10 @@ export default {
     },
   },
   methods: {
-    selectExperience(experience, tabId) {
+    selectExperience(experience, tabId, event) {
+      const { target } = event
+      target.parentElement.parentElement.scrollLeft = target.offsetLeft
+
       this.selectedExperience = experience
       this.activeTabId = tabId
     },
@@ -89,14 +92,19 @@ export default {
   &-list {
     display: flex;
     position: relative;
-    width: calc(100% + (2 * #{$padding-sm}));
     padding: 0;
     margin: 0;
     margin-left: -#{$padding-sm};
     margin-bottom: $space-md;
     list-style: none;
     overflow-x: scroll;
+    scrollbar-width: none;
     z-index: 3;
+
+    &::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+    }
 
     &:first-of-type {
       margin-left: 0;
@@ -117,7 +125,7 @@ export default {
     justify-content: center;
     width: 100%;
     width: 150px;
-    background-color: transparent;
+    background-color: transparentize($color: $c-dark-accent, $amount: 0.9);
     color: $c-white;
     font-size: 14px;
     height: 40px;
@@ -130,6 +138,10 @@ export default {
     outline: none;
     opacity: 0.6;
     transition: all 250ms $transition 0s;
+
+    * {
+      pointer-events: none;
+    }
 
     &:hover,
     &.selected {

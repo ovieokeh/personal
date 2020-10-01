@@ -3,13 +3,9 @@
     <SectionHeader text="My latest blog posts" :index="4" />
 
     <div class="posts">
-      <!-- <template v-for="(project, index) in projects">
-        <Project
-          :key="project.source"
-          :project="project"
-          :is-flipped="index % 2 === 0"
-        />
-      </template> -->
+      <template v-for="post in pageData">
+        <PostDetails :key="post.slug" :details="post" />
+      </template>
     </div>
 
     <div>
@@ -23,10 +19,12 @@
 <script>
 import getBlogPosts from '~/api/getBlogPosts'
 import SectionHeader from '~/components/SectionHeader'
+import PostDetails from '~/components/PostDetails'
 
 export default {
   components: {
     SectionHeader,
+    PostDetails,
   },
   data() {
     return {
@@ -35,7 +33,7 @@ export default {
     }
   },
   created() {
-    getBlogPosts(5, this)
+    getBlogPosts(6, this)
   },
 }
 </script>
@@ -47,6 +45,11 @@ export default {
   padding-top: $space-xxl;
 }
 
+.posts {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .all-posts {
   display: inline-block;
   background-color: transparent;
@@ -55,7 +58,7 @@ export default {
   border-radius: 4px;
   font-size: 14px;
   text-decoration: none;
-  margin: $space-xs 0;
+  margin: $space-sm 0;
   padding: $space-xs $space-sm;
 }
 
@@ -65,7 +68,6 @@ export default {
   }
 
   .all-posts {
-    margin: 0;
     margin-right: $space-xs;
     transition: background-color ease 250ms 50ms, color ease 300ms;
 

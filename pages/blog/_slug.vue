@@ -96,7 +96,6 @@ export default {
   font-family: 'Poppins', arial;
   min-height: 100vh;
   position: relative;
-  padding-top: 95px;
   padding-bottom: $space-lg;
   color: $c-white;
 
@@ -162,6 +161,7 @@ export default {
     display: flex;
     flex-direction: column;
     padding: $space-xl $padding-lg;
+    padding-top: 100px;
     max-width: $site-width / 1.2;
     margin: 0 auto;
   }

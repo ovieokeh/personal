@@ -12,7 +12,7 @@
         :key="link.link"
         :to="`/${link.link}`"
         :class="link.class ? link.class : 'link'"
-        @click="toggleMenu"
+        @click.native="toggleMenu"
         ><span v-if="!link.class" class="link-index">0{{ index + 1 }}. </span
         >{{ link.label }}</nuxt-link
       >
@@ -98,12 +98,12 @@ export default {
 
     window.addEventListener('scroll', () => throttle(this.handleScroll()))
     window.addEventListener('resize', () => throttle(this.handleResize()))
-    window.addEventListener('keydown', (e) => this.handleKeydown(e))
+    window.addEventListener('keydown', this.handleKeydown)
   },
   destroyed() {
     window.removeEventListener('scroll', () => this.handleScroll())
     window.removeEventListener('resize', () => this.handleResize())
-    window.removeEventListener('keydown', (e) => this.handleKeydown(e))
+    window.removeEventListener('keydown', this.handleKeydown)
   },
   methods: {
     toggleMenu(event) {

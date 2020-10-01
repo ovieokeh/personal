@@ -1,24 +1,30 @@
 <template>
   <main class="home">
-    <template v-if="!isLoading">
-      <Introduction
-        :name="pageData.name"
-        :email="pageData.email"
-        :intro="pageData.intro"
-        :roles="pageData.roles"
-        :tagline="pageData.tagline"
-      />
+    <transition name="fade">
+      <div v-if="!isLoading">
+        <Introduction
+          :name="pageData.name"
+          :email="pageData.email"
+          :intro="pageData.intro"
+          :roles="pageData.roles"
+          :tagline="pageData.tagline"
+        />
 
-      <About :technologies="pageData.technologies" />
+        <About :technologies="pageData.technologies" />
 
-      <Experience :experience="pageData.experience.data" />
+        <Experience :experience="pageData.experience.data" />
 
-      <Projects :projects="pageData.projects.data" />
+        <Projects :projects="pageData.projects.data" />
 
-      <Posts />
+        <Posts />
 
-      <Contact />
-    </template>
+        <Contact />
+      </div>
+    </transition>
+
+    <transition name="fade">
+      <Loader v-if="isLoading" />
+    </transition>
   </main>
 </template>
 
@@ -31,6 +37,7 @@ import Experience from '~/page-sections/index/Experience'
 import Projects from '~/page-sections/index/Projects'
 import Posts from '~/page-sections/index/Posts'
 import Contact from '~/page-sections/index/Contact'
+import Loader from '~/components/Loader'
 
 export default {
   components: {
@@ -40,6 +47,7 @@ export default {
     Projects,
     Posts,
     Contact,
+    Loader,
   },
   data() {
     return {

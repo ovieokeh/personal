@@ -82,7 +82,7 @@ export default {
 .a-container {
   min-height: 100vh;
   position: relative;
-  padding-top: 90px;
+  padding-top: 95px;
   padding-bottom: $space-lg;
 }
 

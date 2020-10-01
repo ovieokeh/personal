@@ -91,7 +91,7 @@
     cy: 165px;
     cx: 193px;
     fill: $c-background;
-    stroke: $c-brand;
+    stroke: $c-background;
   }
 }
 </style>

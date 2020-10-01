@@ -1,6 +1,6 @@
 <template>
   <h2 class="header" :style="style">
-    <span class="header-index">0{{ index }}. </span> {{ text }}
+    <span v-if="index" class="header-index">0{{ index }}. </span> {{ text }}
   </h2>
 </template>
 
@@ -14,7 +14,6 @@ export default {
     },
     index: {
       type: Number,
-      required: true,
     },
   },
   computed: {

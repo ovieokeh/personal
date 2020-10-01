@@ -4,7 +4,7 @@
     <h2 class="p-title">{{ details.title }}</h2>
     <h3 class="p-description">{{ details.description }}</h3>
 
-    <svg width="100%" height="100%" v-html="makeRects(300, 300)" />
+    <svg width="100%" height="100%" v-html="makeRects(700, 350)" />
   </a>
 </template>
 
@@ -28,19 +28,21 @@ export default {
 .p {
   &-container {
     color: $c-white;
-    border: 3px solid $c-dark-shades;
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+    margin: $space-xs;
     height: 300px;
-    width: 300px;
-    margin: 1px;
-    max-width: 350px;
     max-height: 350px;
-    flex-grow: 1;
+    flex: 1 300px;
     padding: $space-sm;
     position: relative;
     text-decoration: none;
 
-    &:hover svg {
-      opacity: 0.1;
+    &:hover {
+      box-shadow: none;
+
+      svg {
+        opacity: 0.1;
+      }
     }
 
     svg {

@@ -45,7 +45,11 @@ export default {
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
    */
-  plugins: ['@/plugins/smoothscroll', '@/plugins/vue-fontawesome'],
+  plugins: [
+    '@/plugins/smoothscroll',
+    '@/plugins/vue-fontawesome',
+    '@/plugins/vue-markdown',
+  ],
   /*
    ** Auto import components
    ** See https://nuxtjs.org/api/configuration-components

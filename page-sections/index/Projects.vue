@@ -1,7 +1,5 @@
 <template>
-  <section id="projects" class="container">
-    <SectionHeader text="Personal projects" :index="3" />
-
+  <div>
     <div class="projects">
       <template v-for="(project, index) in projects">
         <Project
@@ -17,16 +15,14 @@
         All publicly available projects
       </a>
     </div>
-  </section>
+  </div>
 </template>
 
 <script>
-import SectionHeader from '~/components/SectionHeader'
 import Project from '~/components/Project'
 
 export default {
   components: {
-    SectionHeader,
     Project,
   },
   props: {
@@ -39,12 +35,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.container {
-  font-family: 'Poppins';
-  margin-top: 200px;
-  padding-top: $space-xxl;
-}
-
 .more-projects {
   display: inline-block;
   background-color: transparent;
@@ -58,10 +48,6 @@ export default {
 }
 
 @media screen and (min-width: $bp-large) {
-  .container {
-    padding-top: $space-xxxl;
-  }
-
   .more-projects {
     margin: 0;
     margin-right: $space-xs;

@@ -19,5 +19,6 @@ module.exports = {
   rules: {
     'vue/prop-name-casing': 0,
     'vue/no-v-html': 0,
+    'vue/require-default-prop': 0,
   },
 }

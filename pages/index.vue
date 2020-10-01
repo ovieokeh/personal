@@ -14,9 +14,7 @@
 
         <Experience :experience="pageData.experience.data" />
 
-        <Projects :projects="pageData.projects.data" />
-
-        <Posts />
+        <Work :projects="pageData.projects.data" />
 
         <Contact />
       </div>
@@ -34,8 +32,7 @@ import getData from '~/api/getData'
 import Introduction from '~/page-sections/index/Introduction'
 import About from '~/page-sections/index/About'
 import Experience from '~/page-sections/index/Experience'
-import Projects from '~/page-sections/index/Projects'
-import Posts from '~/page-sections/index/Posts'
+import Work from '~/page-sections/index/Work'
 import Contact from '~/page-sections/index/Contact'
 import Loader from '~/components/Loader'
 
@@ -44,8 +41,7 @@ export default {
     Introduction,
     About,
     Experience,
-    Projects,
-    Posts,
+    Work,
     Contact,
     Loader,
   },
@@ -55,8 +51,29 @@ export default {
       pageData: {},
     }
   },
+  watch: {
+    isLoading() {
+      if (!this.isLoading) {
+        this.scrollToHash()
+      }
+    },
+  },
   created() {
     getData('37jZbmQSggC4cQCNrjIXYI', this)
+  },
+  methods: {
+    scrollToHash() {
+      setTimeout(() => {
+        const { hash } = this.$route
+
+        if (hash) {
+          document.querySelector(hash).scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',
+          })
+        }
+      })
+    },
   },
 }
 </script>

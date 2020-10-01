@@ -1,6 +1,6 @@
 <template>
-  <section id="posts" class="container">
-    <SectionHeader text="My latest blog posts" :index="4" />
+  <div class="b-container">
+    <SectionHeader text="My latest blog posts" />
 
     <div class="posts">
       <template v-for="post in pageData">
@@ -13,7 +13,7 @@
         All blog posts
       </a>
     </div>
-  </section>
+  </div>
 </template>
 
 <script>
@@ -39,10 +39,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.container {
-  font-family: 'Poppins';
-  margin-top: 200px;
-  padding-top: $space-xxl;
+.b-container {
+  margin-top: $space-xxl;
 }
 
 .posts {
@@ -63,10 +61,6 @@ export default {
 }
 
 @media screen and (min-width: $bp-large) {
-  .container {
-    padding-top: $space-xxxl;
-  }
-
   .all-posts {
     margin-right: $space-xs;
     transition: background-color ease 250ms 50ms, color ease 300ms;

@@ -1,5 +1,5 @@
 <template>
-  <div class="social-icons">
+  <div :class="className">
     <a
       class="link"
       href="https://linkedin.com/in/ovieokeh"
@@ -27,6 +27,11 @@
 <script>
 export default {
   name: 'SocialIcons',
+  computed: {
+    className() {
+      return this.$route.name === 'index' ? 'social-icons' : 'social-icons norm'
+    },
+  },
 }
 </script>
 
@@ -36,21 +41,25 @@ export default {
   position: relative;
   margin-bottom: $space-sm;
   bottom: 0;
-}
 
-.link {
-  color: $c-dark-accent;
-  font-size: 1.5em;
-}
+  .link {
+    color: $c-dark-accent;
+    font-size: 1.5em;
 
-.icon {
-  color: inherit;
-  cursor: pointer;
-  margin-right: $space-sm;
+    &:last-of-type .icon {
+      margin-right: 0;
+    }
+
+    .icon {
+      color: inherit;
+      cursor: pointer;
+      margin-right: $space-sm;
+    }
+  }
 }
 
 @media screen and (min-width: $bp-large) {
-  .social-icons {
+  .social-icons:not(.norm) {
     position: fixed;
     flex-direction: column;
     height: 350px;
@@ -68,23 +77,23 @@ export default {
       margin: 0 auto;
       margin-top: $space-sm;
     }
-  }
 
-  .link {
-    color: $c-dark-accent;
-    font-size: 1.5em;
-    transition: transform 250ms ease 50ms, color ease 300ms;
+    .link {
+      color: $c-dark-accent;
+      font-size: 1.5em;
+      transition: transform 250ms ease 50ms, color ease 300ms;
 
-    &:hover {
-      color: $c-white;
-      transform: scale(1.5);
+      &:hover {
+        color: $c-white;
+        transform: scale(1.5);
+      }
     }
-  }
 
-  .icon {
-    color: inherit;
-    cursor: pointer;
-    margin: $space-xs 0;
+    .icon {
+      color: inherit;
+      cursor: pointer;
+      margin: $space-xs 0;
+    }
   }
 }
 </style>

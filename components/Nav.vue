@@ -10,7 +10,7 @@
       <a
         v-for="(link, index) in links"
         :key="link.link"
-        :href="link.link"
+        :href="`/${link.link}`"
         :class="link.class ? link.class : 'link'"
         @click="toggleMenu"
         ><span v-if="!link.class" class="link-index">0{{ index + 1 }}. </span
@@ -36,12 +36,12 @@ const links = [
     link: '#experience',
   },
   {
-    label: 'Projects',
-    link: '#projects',
+    label: 'Work',
+    link: '#work',
   },
   {
-    label: 'Articles',
-    link: '#posts',
+    label: 'Blog',
+    link: 'blog',
   },
   {
     label: 'Contact',

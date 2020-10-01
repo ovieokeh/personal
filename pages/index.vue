@@ -29,11 +29,12 @@
 <script>
 import getData from '~/api/getData'
 
-import Introduction from '~/page-sections/index/Introduction'
-import About from '~/page-sections/index/About'
-import Experience from '~/page-sections/index/Experience'
-import Work from '~/page-sections/index/Work'
-import Contact from '~/page-sections/index/Contact'
+import Introduction from '~/views/Introduction'
+import About from '~/views/About'
+import Experience from '~/views/Experience'
+import Work from '~/views/Work'
+import Contact from '~/views/Contact'
+
 import Loader from '~/components/Loader'
 
 export default {
@@ -86,7 +87,7 @@ export default {
   padding-bottom: $space-lg;
 }
 
-@media screen and (min-width: $bp-large) {
+@media screen and (min-width: $bp-tablet) {
   .home {
     display: flex;
     flex-direction: column;

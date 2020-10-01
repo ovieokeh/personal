@@ -132,7 +132,7 @@ $project-height: 450px;
   }
 }
 
-@media screen and (min-width: $bp-large) {
+@media screen and (min-width: $bp-tablet) {
   .project {
     background-color: transparent;
     box-shadow: unset;

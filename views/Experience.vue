@@ -30,7 +30,7 @@ export default {
   padding-top: $space-xxl;
 }
 
-@media screen and (min-width: $bp-large) {
+@media screen and (min-width: $bp-tablet) {
   .container {
     padding-top: $space-xxxl;
   }

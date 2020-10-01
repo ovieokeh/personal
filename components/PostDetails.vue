@@ -1,11 +1,11 @@
 <template>
-  <a class="p-container" :href="`blog/${details.slug}`">
+  <nuxt-link class="p-container" :to="`blog/${details.slug}`">
     <span class="p-date">{{ new Date(details.date).toDateString() }}</span>
     <h2 class="p-title">{{ details.title }}</h2>
     <h3 class="p-description">{{ details.description }}</h3>
 
     <svg width="100%" height="100%" v-html="makeRects(700, 350)" />
-  </a>
+  </nuxt-link>
 </template>
 
 <script>

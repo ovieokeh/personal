@@ -110,7 +110,7 @@ export default {
     color ease 300ms;
 }
 
-@media screen and (min-width: $bp-large) {
+@media screen and (min-width: $bp-tablet) {
   .name,
   .tagline {
     font-size: 70px;

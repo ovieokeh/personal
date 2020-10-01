@@ -2,25 +2,24 @@
   <section id="work" class="container">
     <SectionHeader text="My work" :index="3" />
 
-    <Projects :projects="projects" />
+    <RecentProjects :projects="projects" />
 
-    <Posts />
+    <RecentPosts />
   </section>
 </template>
 
 <script>
-import Projects from './Projects'
-import Posts from './Posts'
+import SectionHeader from '~/components/SectionHeader'
+import RecentProjects from '~/components/RecentProjects'
+import RecentPosts from '~/components/RecentPosts'
 
 import getBlogPosts from '~/api/getBlogPosts'
-
-import SectionHeader from '~/components/SectionHeader'
 
 export default {
   components: {
     SectionHeader,
-    Projects,
-    Posts,
+    RecentProjects,
+    RecentPosts,
   },
   props: {
     projects: {
@@ -80,7 +79,7 @@ export default {
   padding: $space-xs $space-sm;
 }
 
-@media screen and (min-width: $bp-large) {
+@media screen and (min-width: $bp-tablet) {
   .container {
     padding-top: $space-xxxl;
   }

@@ -2,17 +2,15 @@
   <div class="b-container">
     <SectionHeader text="My latest blog posts" />
 
-    <div class="posts">
+    <div class="section">
       <template v-for="post in pageData">
         <PostDetails :key="post.slug" :details="post" />
       </template>
     </div>
 
-    <div>
-      <a href="/blog" class="all-posts">
-        All blog posts
-      </a>
-    </div>
+    <nuxt-link to="/blog" class="all-posts">
+      All blog posts
+    </nuxt-link>
   </div>
 </template>
 
@@ -43,7 +41,7 @@ export default {
   margin-top: $space-xxl;
 }
 
-.posts {
+.section {
   display: flex;
   flex-wrap: wrap;
 }
@@ -60,7 +58,7 @@ export default {
   padding: $space-xs $space-sm;
 }
 
-@media screen and (min-width: $bp-large) {
+@media screen and (min-width: $bp-tablet) {
   .all-posts {
     margin-right: $space-xs;
     transition: background-color ease 250ms 50ms, color ease 300ms;

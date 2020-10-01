@@ -1,20 +1,20 @@
 <template>
   <nav class="nav" :style="navStyle">
-    <a class="logo" href="/" aria-label="Home">
+    <nuxt-link class="logo" to="/" aria-label="Home">
       <Logo />
-    </a>
+    </nuxt-link>
 
     <MenuIcon :is-toggled="isToggled" :on-click="toggleMenu" />
 
     <div :class="linksClassname" :style="menuStyle">
-      <a
+      <nuxt-link
         v-for="(link, index) in links"
         :key="link.link"
-        :href="`/${link.link}`"
+        :to="`/${link.link}`"
         :class="link.class ? link.class : 'link'"
         @click="toggleMenu"
         ><span v-if="!link.class" class="link-index">0{{ index + 1 }}. </span
-        >{{ link.label }}</a
+        >{{ link.label }}</nuxt-link
       >
     </div>
   </nav>
@@ -238,7 +238,7 @@ export default {
   }
 }
 
-@media screen and (min-width: $bp-large) {
+@media screen and (min-width: $bp-tablet) {
   .nav {
     margin: 0 auto;
     padding: $padding-sm $padding-lg;

@@ -9,8 +9,8 @@
 </template>
 
 <script>
-import Nav from '../components/Nav'
-import Footer from '../components/Footer'
+import Nav from '~/components/Nav'
+import Footer from '~/components/Footer'
 
 export default {
   components: {
@@ -27,7 +27,7 @@ export default {
   height: 100%;
 }
 
-@media screen and (min-width: $bp-large) {
+@media screen and (min-width: $bp-tablet) {
   #app {
     padding: 0 $padding-lg;
   }

@@ -7,7 +7,7 @@ $c-background: #0a192f;
 $c-white: #fff;
 $c-black: #000;
 
-$padding-lg: 36px;
+$padding-lg: 64px;
 $padding-sm: calc(#{$padding-lg} / 2);
 
 $grid-pt: 8px;
@@ -21,7 +21,7 @@ $space-xxl: 6 * $grid-pt;
 $space-xxxl: 7 * $grid-pt;
 
 $site-width: 140 * $grid-pt;
-$bp-large: 768px;
+$bp-tablet: 768px;
 
 $transition: cubic-bezier(0.645, 0.045, 0.355, 1);
 

@@ -1,20 +1,16 @@
 <template>
   <div>
-    <div class="projects">
-      <template v-for="(project, index) in projects">
-        <Project
-          :key="project.source"
-          :project="project"
-          :is-flipped="index % 2 === 0"
-        />
-      </template>
-    </div>
+    <template v-for="(project, index) in projects">
+      <Project
+        :key="project.source"
+        :project="project"
+        :is-flipped="index % 2 === 0"
+      />
+    </template>
 
-    <div>
-      <a href="https://github.com/ovieokeh" class="more-projects">
-        All publicly available projects
-      </a>
-    </div>
+    <a href="https://github.com/ovieokeh" class="more-projects">
+      All publicly available projects
+    </a>
   </div>
 </template>
 
@@ -47,7 +43,7 @@ export default {
   padding: $space-xs $space-sm;
 }
 
-@media screen and (min-width: $bp-large) {
+@media screen and (min-width: $bp-tablet) {
   .more-projects {
     margin: 0;
     margin-right: $space-xs;

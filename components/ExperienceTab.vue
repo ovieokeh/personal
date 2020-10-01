@@ -48,6 +48,8 @@
 </template>
 
 <script>
+const mq = window.matchMedia('(max-width: 768px)')
+
 export default {
   props: {
     experience: {
@@ -57,21 +59,29 @@ export default {
   },
   data() {
     return {
+      isMobile: mq.matches,
       selectedExperience: this.experience[0],
       activeTabId: 0,
     }
   },
   computed: {
     highlightStyle() {
-      const mq = window.matchMedia('(max-width: 768px)')
-      const translate = mq.matches
+      const translate = this.isMobile
         ? `translateX(${this.activeTabId > 0 ? this.activeTabId * 150 : 0}px);`
         : `translateY(${this.activeTabId > 0 ? this.activeTabId * 40 : 0}px);`
 
       return `transform: ${translate}`
     },
   },
+  mounted() {
+    this.$nextTick(() => {
+      mq.addListener(this.updateIsMobile)
+    })
+  },
   methods: {
+    updateIsMobile(e) {
+      this.isMobile = e.matches
+    },
     selectExperience(experience, tabId, event) {
       const { target } = event
       target.parentElement.parentElement.scrollLeft = target.offsetLeft
@@ -212,7 +222,7 @@ export default {
   margin-left: 0;
 }
 
-@media screen and (min-width: $bp-large) {
+@media screen and (min-width: $bp-tablet) {
   .tabs {
     display: flex;
 

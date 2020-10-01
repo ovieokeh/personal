@@ -11,7 +11,7 @@
     >
 
     <span class="footer-text footer-powered"
-      >Powered by <a href="https://buttercms.com"> <ContentfulLogo /></a
+      >Powered by Vue + <a href="https://buttercms.com"> <ContentfulLogo /></a
     ></span>
 
     <SocialIcons />
@@ -69,7 +69,7 @@ export default {
   }
 }
 
-@media screen and (min-width: $bp-large) {
+@media screen and (min-width: $bp-tablet) {
   .footer {
     align-items: center;
   }

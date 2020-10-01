@@ -15,12 +15,9 @@
       aria-label="Twitter icon"
       ><font-awesome-icon class="icon" :icon="['fab', 'twitter']"
     /></a>
-    <a
-      class="link"
-      href="https://blog.logrocket.com/author/ovieokeh"
-      aria-label="Blog icon"
+    <nuxt-link class="link" to="/blog" aria-label="Blog icon"
       ><font-awesome-icon class="icon" :icon="['fas', 'pen']"
-    /></a>
+    /></nuxt-link>
   </div>
 </template>
 
@@ -58,7 +55,7 @@ export default {
   }
 }
 
-@media screen and (min-width: $bp-large) {
+@media screen and (min-width: $bp-tablet) {
   .social-icons:not(.norm) {
     position: fixed;
     flex-direction: column;

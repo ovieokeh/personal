@@ -80,6 +80,11 @@ export default {
 
 <style lang="scss">
 .a-container {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, arial;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 28px;
+  color: $c-light-shades;
   min-height: 100vh;
   position: relative;
   padding-top: 95px;
@@ -93,7 +98,6 @@ export default {
 }
 
 .article {
-  font-family: 'Poppins', arial;
   min-height: 100vh;
   position: relative;
   padding-bottom: $space-lg;
@@ -104,9 +108,20 @@ export default {
     color: $c-dark-accent;
   }
 
+  &-title {
+    margin-bottom: $space-md;
+  }
+
   &-desc {
     font-size: 14px;
     font-weight: 400;
+  }
+
+  &-date,
+  &-title,
+  &-desc {
+    display: block;
+    text-align: center;
   }
 
   &-featured-img {

@@ -8,7 +8,7 @@ $c-white: #fff;
 $c-black: #000;
 
 $padding-lg: 56px;
-$padding-sm: calc(#{$padding-lg} / 2);
+$padding-sm: $padding-lg / 2;
 
 $grid-pt: 8px;
 

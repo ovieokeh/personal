@@ -125,9 +125,10 @@ export default {
   }
 
   &-featured-img {
-    width: 100%;
-    object-fit: cover;
+    width: 100vw;
     margin: $space-md 0;
+    margin-left: -$padding-sm;
+    object-fit: cover;
   }
 
   &-content {
@@ -185,6 +186,11 @@ export default {
     flex-direction: column;
     max-width: $site-width;
     margin: 0 auto;
+
+    &-featured-img {
+      width: 100%;
+      margin-left: 0;
+    }
 
     &-content {
       img {

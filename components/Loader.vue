@@ -69,13 +69,13 @@
   0% {
     cx: 175px;
     cy: 127px;
-    fill: $c-background;
+    fill: $c-brand;
     stroke: $c-brand;
   }
   100% {
     cx: 111px;
     cy: 107px;
-    fill: $c-brand;
+    fill: $c-background;
     stroke: $c-background;
   }
 }

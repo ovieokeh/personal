@@ -69,9 +69,9 @@ export default {
   methods: {
     postRender(html) {
       const parsed = html
-        .replaceAll('<p><img', '<img')
-        .replaceAll('/></p>', '/>')
-      window.st = parsed
+        .replace(/<p><img/g, '<img')
+        .replace(/(\/><\/p>)/g, '/>')
+      window.st = html
       return parsed
     },
   },
@@ -89,7 +89,7 @@ export default {
 .posts {
   display: flex;
   flex-wrap: wrap;
-  padding-top: 90px;
+  padding-top: $space-xl;
 }
 
 .article {
@@ -110,7 +110,6 @@ export default {
   }
 
   &-featured-img {
-    height: 500px;
     width: 100%;
     object-fit: cover;
     margin: $space-md 0;

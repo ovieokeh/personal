@@ -77,6 +77,7 @@ export default {
     const title = `${this.pageData.title} | Ovie Okeh's Blog`
     const desc = this.pageData.description
     const featuredImage = this.pageData.featureImage?.fields.file.url
+    const url = `https://ovie.dev${this.$route.path}`
 
     return {
       title,
@@ -94,7 +95,7 @@ export default {
         {
           hid: 'og:url',
           property: 'og:url',
-          content: this.$route.path,
+          content: url,
         },
         {
           hid: 'og:title',
@@ -119,7 +120,7 @@ export default {
         {
           hid: 'twitter:url',
           property: 'twitter:url',
-          content: this.$route.path,
+          content: url,
         },
         {
           hid: 'twitter:title',

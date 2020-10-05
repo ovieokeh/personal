@@ -1,82 +1,68 @@
 <template>
   <div class="a-container">
-    <div v-if="isIndex" class="posts">
-      <SectionHeader text="My articles" />
+    <transition name="fade">
+      <div v-if="!isLoading" class="article">
+        <span class="article-date">{{
+          new Date(pageData.date).toDateString()
+        }}</span>
+        <h2 class="article-title">{{ pageData.title }}</h2>
+        <h3 class="article-desc">{{ pageData.description }}</h3>
 
-      <template v-for="post in pageData">
-        <PostDetails :key="post.slug" :details="post" />
-      </template>
-    </div>
+        <img
+          v-if="pageData.featureImage"
+          :src="pageData.featureImage.fields.file.url"
+          :alt="pageData.featureImage.fields.title"
+          class="article-featured-img"
+        />
 
-    <div v-else class="article">
-      <span v-if="pageData.date" class="article-date">{{
-        new Date(pageData.date).toDateString()
-      }}</span>
-      <h2 class="article-title">{{ pageData.title }}</h2>
-      <h3 class="article-desc">{{ pageData.description }}</h3>
+        <VueMarkdown
+          :source="pageData.content"
+          :postrender="postRender"
+          class="article-content"
+        />
 
-      <img
-        v-if="pageData.featureImage"
-        :src="pageData.featureImage.fields.file.url"
-        :alt="pageData.featureImage.fields.title"
-        class="article-featured-img"
-      />
+        <script
+          src="https://utteranc.es/client.js"
+          repo="ovieokeh/personal"
+          issue-term="url"
+          label="comment"
+          theme="dark-blue"
+          crossorigin="anonymous"
+          same-site="none"
+          secure
+          async
+        ></script>
 
-      <VueMarkdown
-        :source="pageData.content"
-        :postrender="postRender"
-        class="article-content"
-      />
+        <nuxt-link to="/blog" class="back">Back to all posts</nuxt-link>
+      </div>
+    </transition>
 
-      <script
-        src="https://utteranc.es/client.js"
-        repo="ovieokeh/personal"
-        issue-term="url"
-        label="comment"
-        theme="dark-blue"
-        crossorigin="anonymous"
-        async
-      ></script>
-
-      <nuxt-link to="/blog" class="back">Back to all posts</nuxt-link>
-    </div>
+    <transition name="fade">
+      <Loader v-if="isLoading" />
+    </transition>
   </div>
 </template>
 
 <script>
 import VueMarkdown from 'vue-markdown/src/VueMarkdown'
 
-import SectionHeader from '~/components/SectionHeader'
-import PostDetails from '~/components/PostDetails'
-
 import getSinglearticle from '~/api/getSinglePost'
-import getBlogPosts from '~/api/getBlogPosts'
+import Loader from '~/components/Loader'
 
 export default {
   components: {
     VueMarkdown,
-    SectionHeader,
-    PostDetails,
+    Loader,
   },
   async fetch() {
     const slug = this.$route.params.slug
-
-    if (slug) {
-      await getSinglearticle(slug, this)
-    } else {
-      await getBlogPosts(undefined, this)
-    }
+    await getSinglearticle(slug, this)
   },
   data() {
     return {
       isLoading: true,
       pageData: {},
     }
-  },
-  computed: {
-    isIndex() {
-      return !this.$route.params.slug
-    },
   },
   methods: {
     postRender(html) {
@@ -87,33 +73,90 @@ export default {
       return parsed
     },
   },
+  head() {
+    const title = `${this.pageData.title} | Ovie Okeh's Blog`
+    const desc = this.pageData.description
+    const featuredImage = this.pageData.featureImage?.fields.file.url
+
+    return {
+      title,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: desc,
+        },
+        {
+          hid: 'og:type',
+          property: 'og:type',
+          content: 'website',
+        },
+        {
+          hid: 'og:url',
+          property: 'og:url',
+          content: this.$route.path,
+        },
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: title,
+        },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: desc,
+        },
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: featuredImage,
+        },
+        {
+          hid: 'twitter:card',
+          property: 'twitter:card',
+          content: 'summary_large_image',
+        },
+        {
+          hid: 'twitter:url',
+          property: 'twitter:url',
+          content: this.$route.path,
+        },
+        {
+          hid: 'twitter:title',
+          property: 'twitter:title',
+          content: title,
+        },
+        {
+          hid: 'twitter:description',
+          property: 'twitter:description',
+          content: desc,
+        },
+        {
+          hid: 'twitter:image',
+          property: 'twitter:image',
+          content: featuredImage,
+        },
+      ],
+    }
+  },
 }
 </script>
 
 <style lang="scss">
 .a-container {
-  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, arial;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 28px;
-  color: $c-light-shades;
   min-height: 100vh;
-  position: relative;
   padding-top: 95px;
   padding-bottom: $space-lg;
 }
 
-.posts {
-  display: flex;
-  flex-wrap: wrap;
-  padding-top: $space-xl;
-}
-
 .article {
-  min-height: 100vh;
+  color: $c-white;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, arial;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 28px;
   position: relative;
   padding-bottom: $space-lg;
-  color: $c-white;
 
   &-date {
     font-size: 12px;
@@ -197,8 +240,6 @@ export default {
 
 @media screen and (min-width: $bp-tablet) {
   .a-container {
-    display: flex;
-    flex-direction: column;
     padding: $space-xl $padding-lg;
     padding-top: 100px;
     max-width: $site-width / 1.2;

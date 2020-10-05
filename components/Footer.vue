@@ -36,7 +36,7 @@ export default {
   display: flex;
   flex-direction: column;
   color: $c-dark-accent;
-  margin-top: $space-xxl;
+  padding: $space-xxl 0;
   opacity: 0.7;
 
   &-text {

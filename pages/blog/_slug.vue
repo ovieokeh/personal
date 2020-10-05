@@ -9,7 +9,7 @@
     </div>
 
     <div v-else class="article">
-      <span class="article-date">{{
+      <span v-if="pageData.date" class="article-date">{{
         new Date(pageData.date).toDateString()
       }}</span>
       <h2 class="article-title">{{ pageData.title }}</h2>
@@ -27,6 +27,18 @@
         :postrender="postRender"
         class="article-content"
       />
+
+      <script
+        src="https://utteranc.es/client.js"
+        repo="ovieokeh/personal"
+        issue-term="url"
+        label="comment"
+        theme="dark-blue"
+        crossorigin="anonymous"
+        async
+      ></script>
+
+      <nuxt-link to="/blog" class="back">Back to all posts</nuxt-link>
     </div>
   </div>
 </template>
@@ -169,6 +181,18 @@ export default {
       }
     }
   }
+
+  .back {
+    display: inline-block;
+    background-color: transparent;
+    color: $c-light-shades;
+    border: 1px solid $c-light-shades;
+    border-radius: 4px;
+    font-size: 14px;
+    text-decoration: none;
+    margin: $space-sm 0;
+    padding: $space-xs $space-sm;
+  }
 }
 
 @media screen and (min-width: $bp-tablet) {
@@ -195,6 +219,17 @@ export default {
     &-content {
       img {
         max-width: 720px;
+      }
+    }
+
+    .back {
+      margin: $space-lg auto;
+      transition: background-color ease 250ms 50ms, color ease 300ms;
+      width: 150px;
+
+      &:hover {
+        background-color: $c-light-shades;
+        color: $c-dark-shades;
       }
     }
   }
